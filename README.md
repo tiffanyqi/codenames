@@ -2,9 +2,9 @@
 
 ## TODO:
 - Create rooms for different games to go on at once
-- Model for a game and keeping state
+- Model for a game and keeping state (MVP)
 - Dictionary of all the words on any given board
-- Create two states of the same board, one for codemasters and one for everyone else
+- Create two states of the same board, one for codemasters and one for everyone else (MVP)
 
 ## GAMEPLAY:
 - Two codemasters know the state of the board
