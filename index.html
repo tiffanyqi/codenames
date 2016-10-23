@@ -1,26 +1,49 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Codenames</title>
   </head>
   <body>
     <h1>Codenames</h1>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <div class="board">
+      <ul id="words"></ul>
+    </div>
+
+    <div class="chat-box">
+      <ul id="messages"></ul>
+      <form action="">
+        <input id="message" autocomplete="off" /><button>Send</button>
+      </form>
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="js/game.js"></script>
+
     <script>
+      startGame();
+
       var socket = io();
       $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
+        socket.emit('chat message', $('#message').val());
+        $('#message').val('');
         return false;
       });
       socket.on('chat message', function(msg){
         $('#messages').append($('<li>').text(msg));
       });
+
+      var words = ['Acne','Acre','Addendum','Advertise','Aircraft',
+                   'Aisle','Alligator','Alphabetize','America','Ankle',
+                   'Apathy','Applause','Applesauce','Application','Archaeologist',
+                   'Aristocrat','Arm','Armada','Asleep','Astronaut',
+                   'Athlete','Atlantis','Aunt','Avocado','Baby-Sitter'
+        ];
+      for (i = 0; i < words.length; i++) {
+        $('#words').append($("<div class='card'>").text(words[i]));
+      };
+
     </script>
   </body>
 </html>

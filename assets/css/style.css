@@ -1,0 +1,16 @@
+.chat-box{
+  position: fixed;
+  right: 10px;
+  border: 1px solid black;
+}
+.card{
+  height: 50px;
+  width: 100px;
+  border: 1px solid black;
+  float: left;
+  margin: 5px;
+}
+.board{
+  height: 300px;
+  width: 600px;
+}

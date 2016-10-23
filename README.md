@@ -7,6 +7,7 @@
 - Create rooms for different games to go on at once
 - History of moves
 - Chat between codemasters and amongst all teams
+- Spectators
 
 ## GAMEPLAY:
 - Two codemasters know the state of the board
